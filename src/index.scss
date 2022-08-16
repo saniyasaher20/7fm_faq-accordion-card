@@ -1,0 +1,155 @@
+/*# sourceMappingURL=index.css.map */
+
+$veryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+$softRed: hsl(14, 88%, 65%);
+
+$softViolet: hsl(273, 75%, 66%);
+$softBlue: hsl(240, 73%, 65%);
+
+
+$veryDarkGrayishBlue: hsl(237, 12%, 33%);
+$darkGrayishBlue: hsl(240, 6%, 50%);
+
+$lightGrayishBlue: hsl(240, 5%, 91%);
+
+
+.container-fluid {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image: linear-gradient(to bottom, $softViolet, $softBlue);
+    font-size: 16px;
+}
+
+section {
+    min-height: calc(100vh - 0.1px);
+    display: grid;
+    place-items: center;
+
+    .card {
+        border-radius: 20px;
+        font-size: 14px;
+        padding: 0 15px 0 0;
+        margin: 10rem auto;
+        border: none;
+        max-width: 800px;
+
+        &-title {
+            font-weight: 700;
+            font-size: 35px;
+        }
+
+        @media (min-width: 768px) {
+            .col-img {
+                background-image: url("./images/bg-pattern-desktop.svg");
+                background-position: bottom -12rem left -38rem;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .women-img {
+                    overflow: hidden;
+
+                    img {
+                        transform: translateX(-5rem);
+                    }
+                }
+
+                &>img {
+                    display: inline;
+                    position: absolute;
+                    top: 42%;
+                    left: -25%;
+                }
+            }
+
+            .col-body {
+                padding: 2rem 0;
+            }
+
+
+        }
+
+        @media (max-width:767px) {
+            & {
+                padding-left: 15px;
+
+                .col-img {
+                    background-image: url("./images/bg-pattern-mobile.svg");
+                    background-position: top center;
+                    background-repeat: no-repeat;
+
+                    &>img {
+                        display: none;
+                    }
+                }
+
+                .women-img img {
+                    width: 250px;
+                    display: block;
+                    margin: 0 auto;
+                    transform: translateY(-7rem);
+                    margin-bottom: -4rem;
+                }
+
+                &-title {
+                    text-align: center;
+                }
+            }
+
+
+        }
+    }
+}
+
+.accordion {
+    &-body {
+        color: $darkGrayishBlue;
+        line-height: 1.1rem;
+        padding: 1rem 1.25rem 1rem 0;
+    }
+
+    &-button {
+        gap: 10px;
+        padding: 1rem 1.25rem 1rem 0;
+
+        // border-bottom: 1px solid $lightGrayishBlue;
+        &::after,
+        &:not(.collapsed)::after {
+            background-image: url("./images/icon-arrow-down.svg");
+            width: .7rem;
+            height: .7rem;
+            background-size: .7rem;
+        }
+
+        &:not(.collapsed) {
+            background-color: transparent;
+            color: $veryDarkDesaturatedBlue;
+            font-weight: 700;
+            padding: 1rem 1.25rem 0 0;
+            box-shadow: none;
+
+            &::after {
+                transform: rotate(-180deg);
+            }
+
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+
+    }
+}
+
+
+
+footer {
+    color: black;
+    font-size: 11px;
+    text-align: center;
+
+    a {
+        text-decoration: underline;
+        color: hsl(0, 0%, 0%);
+    }
+}
